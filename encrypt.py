@@ -12,12 +12,16 @@ Terima kasih, kawan sejati
 """
 
 key = "133457799BBCDFF1"
-
-# buat objek DES
 des = DES(key)
 
-# enkripsi
 cipher = des.encrypt(plaintext)
+hex_cipher = cipher.hex()
 
 print("Ciphertext (hex):")
-print(cipher.hex())
+print(hex_cipher)
+print()
+
+with open("ciphertext.hex", "w") as f:
+    f.write(hex_cipher)
+
+print("Cipher saved to ciphertext.hex")
